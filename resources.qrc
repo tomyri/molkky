@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/img">
+        <file>game_start.svg</file>
+        <file>game_start_big.png</file>
+    </qresource>
+</RCC>

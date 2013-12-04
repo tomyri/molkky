@@ -1,0 +1,29 @@
+Name: harbour-molkky
+Summary: Molkky scoreboard
+Version: 0.1
+Release: 3
+Group: Qt/Qt
+License: GPLv2
+Sources:
+- '%{name}-%{version}.tar.bz2'
+Description: |-
+  Molkky scoreboard application for Sailfish
+Configure: none
+Builder: qtc5
+PkgConfigBR:
+- sailfishapp
+- Qt5Quick
+- Qt5Qml
+- Qt5Core
+Requires:
+- sailfishsilica-qt5
+Files:
+- '%{_bindir}'
+- '%{_datadir}/%{name}/qml'
+- '%{_datadir}/applications/%{name}.desktop'
+- '%{_datadir}/icons/hicolor/86x86/apps/%{name}.png'
+- /usr/bin
+- /usr/share/harbour-molkky
+- /usr/share/applications
+- /usr/share/icons/hicolor/86x86/apps
+PkgBR: []

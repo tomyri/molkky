@@ -11,6 +11,7 @@ Page {
     property int round: 1
     property int ballSize: 80
     property bool gameOn: true
+    property bool leftHanded: false
 
     function checkSnap(item) {
         if (item.x + ballSize / 2 > dropArea.x && item.x < dropArea.x + ballSize
@@ -126,6 +127,10 @@ Page {
                 onClicked: pageStack.push(Qt.resolvedUrl("AboutPage.qml"))
             }
             MenuItem {
+                text: qsTr("Change handedness")
+                onClicked: leftHanded = !leftHanded
+            }
+            MenuItem {
                 text: qsTr("Undo")
                 onClicked: undoLastThrow()
             }
@@ -187,15 +192,21 @@ Page {
             radius: 100
             smooth: true
             Text {
-                text: qsTr("Drop score\nhere!")
+                text: qsTr("Drop score here!")
                 font.pixelSize: 20
+                horizontalAlignment: Text.AlignHCenter
+                width: parent.width
                 anchors.centerIn: parent
+                wrapMode: Text.WordWrap
             }
             x: parent.width / 2 - width / 2
             y: parent.height / 1.33 - height / 2
         }
         Rectangle {
             id: missball
+            property int homeY: parent.height / 2
+            property int homeX: leftHanded ? 30 : parent.width - 30 - width
+            onHomeXChanged: x = homeX
             onXChanged: checkSnap(missball)
             onYChanged: checkSnap(missball)
             color: Theme.highlightColor
@@ -203,16 +214,14 @@ Page {
             height: ballSize
             radius: 100
             smooth: true
-            x: 10
-            y: parent.height / 2
+            x: homeX
+            y: homeY
             Text {
                 text: qsTr("Miss")
                 font.pixelSize: 20
                 anchors.centerIn: parent
             }
             MouseArea {
-                property int xWas
-                property int yWas
                 anchors.fill: parent
                 drag.target: parent
                 drag.axis: Drag.XandYAxis
@@ -220,15 +229,11 @@ Page {
                 drag.maximumX: page.width - parent.width
                 drag.minimumY: 0
                 drag.maximumY: page.height - parent.height
-                onPressed: {
-                    xWas = parent.x
-                    yWas = parent.y
-                }
                 onReleased: {
                     if (parent.x == dropArea.x + ballSize / 4 && parent.y == dropArea.y + ballSize / 4)
                         addScore(0)
-                    parent.x = xWas
-                    parent.y = yWas
+                    parent.x = parent.homeX
+                    parent.y = parent.homeY
                 }
             }
         }

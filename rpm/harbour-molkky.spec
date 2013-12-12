@@ -13,8 +13,8 @@ Name:       harbour-molkky
 %{!?qtc_make:%define qtc_make make}
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    Molkky scoreboard
-Version:    0.1
-Release:    3
+Version:    0.2
+Release:    1
 Group:      Qt/Qt
 License:    GPLv2
 Source0:    %{name}-%{version}.tar.bz2
@@ -69,5 +69,6 @@ desktop-file-install --delete-original       \
 /usr/share/harbour-molkky
 /usr/share/applications
 /usr/share/icons/hicolor/86x86/apps
+/usr/share/harbour-molkky/i18n
 # >> files
 # << files

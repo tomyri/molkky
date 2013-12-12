@@ -78,7 +78,7 @@ Mölkky on ideoitu Päijät-Hämeen koulutuskonsernin Tuoterengas-yksikössä La
     <message>
         <source>Drop score
 here!</source>
-        <translation>Tiputa pisteet tähän!</translation>
+        <translation type="obsolete">Tiputa pisteet tähän!</translation>
     </message>
     <message>
         <source>Miss</source>
@@ -116,6 +116,14 @@ here!</source>
     <message>
         <source>Last throws: %1</source>
         <translation>Viimeisimmät heitot: %1</translation>
+    </message>
+    <message>
+        <source>Change handedness</source>
+        <translation>Vaihda kätisyyttä</translation>
+    </message>
+    <message>
+        <source>Drop score here!</source>
+        <translation>Tiputa pisteet tähän!</translation>
     </message>
 </context>
 <context>

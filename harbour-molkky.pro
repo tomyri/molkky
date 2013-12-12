@@ -29,7 +29,10 @@ desktop.path = /usr/share/applications
 icon.files = harbour-molkky.png
 icon.path = /usr/share/icons/hicolor/86x86/apps
 
-INSTALLS += target icon desktop qml
+i18n.files = i18n
+i18n.path = $$DEPLOYMENT_PATH
+
+INSTALLS += target icon desktop qml i18n
 # End fix
 
 SOURCES += src/harbour-molkky.cpp
@@ -49,7 +52,7 @@ OTHER_FILES += qml/harbour-molkky.qml \
     harbour-molkky.desktop
 
 
-TRANSLATIONS = i18n/molkky_fi.ts
+TRANSLATIONS = i18n/harbour-molkky_fi.ts
 
 RESOURCES += \
     resources.qrc

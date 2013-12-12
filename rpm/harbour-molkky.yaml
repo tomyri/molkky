@@ -1,7 +1,7 @@
 Name: harbour-molkky
 Summary: Molkky scoreboard
-Version: 0.1
-Release: 3
+Version: 0.2
+Release: 1
 Group: Qt/Qt
 License: GPLv2
 Sources:
@@ -26,4 +26,5 @@ Files:
 - /usr/share/harbour-molkky
 - /usr/share/applications
 - /usr/share/icons/hicolor/86x86/apps
+- /usr/share/harbour-molkky/i18n
 PkgBR: []

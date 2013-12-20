@@ -8,32 +8,7 @@
 #         - icon definition filename in desktop file must be changed
 TARGET = harbour-molkky
 
-#CONFIG += sailfishapp
-
-# Temporary fix to fill harbour requirements. Return to "CONFIG += sailfishapp" when sdk is updated
-QT += quick qml
-CONFIG += link_pkgconfig
-PKGCONFIG += sailfishapp
-INCLUDEPATH += /usr/include/sailfishapp
-
-TARGETPATH = /usr/bin
-target.path = $$TARGETPATH
-
-DEPLOYMENT_PATH = /usr/share/$$TARGET
-qml.files = qml
-qml.path = $$DEPLOYMENT_PATH
-
-desktop.files = harbour-molkky.desktop
-desktop.path = /usr/share/applications
-
-icon.files = harbour-molkky.png
-icon.path = /usr/share/icons/hicolor/86x86/apps
-
-i18n.files = i18n
-i18n.path = $$DEPLOYMENT_PATH
-
-INSTALLS += target icon desktop qml i18n
-# End fix
+CONFIG += sailfishapp
 
 SOURCES += src/harbour-molkky.cpp
 
@@ -56,3 +31,8 @@ TRANSLATIONS = i18n/harbour-molkky_fi.ts
 
 RESOURCES += \
     resources.qrc
+
+i18n.files = i18n
+i18n.path = /usr/share/$$TARGET
+
+INSTALLS += i18n

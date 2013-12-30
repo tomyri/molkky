@@ -1,7 +1,7 @@
 molkky
 ======
 
-Molkky scoreboard application for Sailfish
+Molkky scoreboard application for Sailfish. You can download latest version from Jolla-store.
 
 Licenses
 ========

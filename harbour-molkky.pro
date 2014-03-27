@@ -10,7 +10,8 @@ TARGET = harbour-molkky
 
 CONFIG += sailfishapp
 
-SOURCES += src/harbour-molkky.cpp
+SOURCES += \
+    src/main.cpp
 
 lupdate_only{
 SOURCES +=  qml/*.qml\
@@ -18,13 +19,14 @@ SOURCES +=  qml/*.qml\
             qml/cover/*.qml
 }
 
-OTHER_FILES += qml/harbour-molkky.qml \
+OTHER_FILES += \
     qml/cover/CoverPage.qml \
     qml/pages/*.qml\
     qml/items/*.qml\
     rpm/harbour-molkky.spec \
     rpm/harbour-molkky.yaml \
-    harbour-molkky.desktop
+    harbour-molkky.desktop \
+    qml/main.qml
 
 
 TRANSLATIONS = i18n/harbour-molkky_fi.ts

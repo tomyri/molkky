@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="fi_FI">
+<TS version="2.1" language="fi_FI">
 <context>
     <name>AboutPage</name>
     <message>
@@ -151,6 +151,10 @@ here!</source>
         <source>Remove %1?</source>
         <comment>1-username</comment>
         <translation>Poistetaanko %1?</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation>Posta</translation>
     </message>
 </context>
 <context>

@@ -13,17 +13,17 @@ Name:       harbour-molkky
 %{!?qtc_make:%define qtc_make make}
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    Molkky scoreboard
-Version:    0.2
-Release:    2
+Version:    0.3
+Release:    1
 Group:      Qt/Qt
 License:    GPLv2
 Source0:    %{name}-%{version}.tar.bz2
 Source100:  harbour-molkky.yaml
 Requires:   sailfishsilica-qt5
-BuildRequires:  pkgconfig(Qt5Core)
-BuildRequires:  pkgconfig(Qt5Qml)
-BuildRequires:  pkgconfig(Qt5Quick)
 BuildRequires:  pkgconfig(sailfishapp)
+BuildRequires:  pkgconfig(Qt5Quick)
+BuildRequires:  pkgconfig(Qt5Qml)
+BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  desktop-file-utils
 
 %description
@@ -61,14 +61,14 @@ desktop-file-install --delete-original       \
 
 %files
 %defattr(-,root,root,-)
-/usr/share/harbour-molkky/i18n
-/usr/share/icons/hicolor/86x86/apps
-/usr/share/applications
-/usr/share/harbour-molkky
-/usr/bin
-%{_datadir}/icons/hicolor/86x86/apps/%{name}.png
-%{_datadir}/applications/%{name}.desktop
-%{_datadir}/%{name}/qml
 %{_bindir}
+%{_datadir}/%{name}/qml
+%{_datadir}/applications/%{name}.desktop
+%{_datadir}/icons/hicolor/86x86/apps/%{name}.png
+/usr/bin
+/usr/share/harbour-molkky
+/usr/share/applications
+/usr/share/icons/hicolor/86x86/apps
+/usr/share/harbour-molkky/i18n
 # >> files
 # << files

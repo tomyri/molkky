@@ -1,23 +1,16 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 Page {
-
+    id: page
     //+ Jonas Raoni Soares Silva
     //@ http://jsfromhell.com/array/shuffle [v1.0]
     function shuffle(o){ //v1.0
         for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
         return o;
     }
-
-    id: page
     function addPlayer(p) {
         playersModel.append({"name":p})
     }
-    //    Component.onCompleted: {
-    //        var moo = ["Jouko","Kissa"/*,"Tomi"*/]
-    //        for (var i in moo)
-    //            addPlayer(moo[i])
-    //    }
     PageHeader {
         id: hea
         title: qsTr("New Scoreboard")
@@ -35,6 +28,8 @@ Page {
             left: parent.left
             top: hea.bottom
         }
+        //NOTE: to fix bug with prediction
+        inputMethodHints: Qt.ImhNoPredictiveText
     }
     Button {
         id: addPlayerButton
@@ -88,7 +83,6 @@ Page {
         x: Theme.paddingLarge
         anchors.top: playersLabel.bottom
     }
-    //TODO: scrolling doens't honor items height
     SilicaListView {
         id: listView
         model: playersModel
@@ -100,6 +94,8 @@ Page {
             bottomMargin: Theme.paddingLarge
         }
         width: parent.width
+        boundsBehavior: Flickable.DragOverBounds
+        clip: true
     }
     Row {
         id: bottomButtonRow
@@ -131,8 +127,8 @@ Page {
                 }
                 if (shuffleSwitch.checked)
                     moo = shuffle(moo)
-
                 pageStack.push("MarkScorePage.qml", {"players" : moo})
             }
-        }}
+        }
+    }
 }

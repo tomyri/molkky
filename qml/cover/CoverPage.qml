@@ -15,17 +15,6 @@ CoverBackground {
         z: -2
         opacity: Theme.highlightBackgroundOpacity
     }
-
-//    CoverActionList {
-//        id: coverAction
-
-//        CoverAction {
-//            iconSource: "image://theme/icon-cover-next"
-//            onTriggered: {
-//                console.debug("Cover triggered")
-//            }
-//        }
-//    }
 }
 
 

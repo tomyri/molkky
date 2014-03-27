@@ -4,6 +4,9 @@ import Sailfish.Silica 1.0
 Dialog {
     property string name
     anchors.fill: parent
+    DialogHeader {
+        acceptText: qsTr("Remove")
+    }
     Label {
         anchors.centerIn: parent
         color: Theme.highlightColor
